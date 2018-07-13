@@ -1,0 +1,75 @@
+{
+  "scopeName": "source.cfg",
+  "name": "CFG",
+  "fileTypes": [
+    "cfg"
+  ],
+  "patterns": [
+    {
+      "begin": "\\(\\*",
+      "end": "\\*\\)",
+      "name": "comment.block.cfg",
+      "patterns": [
+        {"match": "."}
+      ]
+    },
+    {
+      "begin": "(.*?)(\\:\\=)",
+      "end": "(;|\\.)",
+      "captures": {
+        "3": {"name": "none.cfg"},
+        "2": {"name": "constant.other.cfg"},
+        "1": {"name": "support.variable.cfg"}
+      },
+      "patterns": [
+        {
+          "match": "\\|",
+          "name": "constant.other.cfg"
+        },
+        {
+          "begin": "\"",
+          "end": "\"",
+          "name": "string.quoted.double.untitled.cfg",
+          "patterns": [
+            {"match": "."}
+          ]
+        },
+        {
+          "begin": "'",
+          "end": "'",
+          "name": "string.quoted.single.untitled.cfg",
+          "patterns": [
+            {"match": "."}
+          ]
+        },
+        {
+          "begin": "\\(\\*",
+          "end": "\\*\\)",
+          "name": "comment.block.cfg",
+          "patterns": [
+            {"match": "."}
+          ]
+        },
+        {
+          "match": "\\{|\\}",
+          "name": "constant.character.escape.cfg"
+        },
+        {
+          "match": "\\(|\\)|\\?|\\*|\\+",
+          "name": "keyword.other.cfg"
+        },
+        {
+          "match": "\\[|\\]|\\-",
+          "name": "constant.character.escape.cfg"
+        },
+        {
+          "match": "(\\d+)\\s+(\\*)",
+          "captures": {
+            "1": {"name": "constant.numeric.integer.decimal.cfg"},
+            "2": {"name": "keyword.other.cfg"}
+          }
+        }
+      ]
+    }
+  ]
+}

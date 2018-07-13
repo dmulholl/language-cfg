@@ -1,0 +1,10 @@
+{
+  "name": "language-cfg",
+  "version": "0.1.0",
+  "description": "Syntax highlighting for a BNF-style context-free grammar.",
+  "repository": "https://github.com/dmulholland/language-cfg",
+  "license": "MIT",
+  "engines": {
+    "atom": "*"
+  }
+}
